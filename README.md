@@ -1,15 +1,46 @@
-# mcp-core-research
+# @pipeworx/core-research
 
-CORE Research MCP — wraps CORE API (api.core.ac.uk/v3)
+CORE (core.ac.uk), the Open University's aggregator of open-access research:
+search papers across thousands of repositories and journals and fetch one
+paper's metadata, abstract and full-text download link by CORE id.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1573+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1576+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_papers` | Search open-access research papers by keyword (e.g., "machine learning healthcare"). Returns titles, authors, abstracts, DOIs, and download links. Useful for literature reviews and finding academic sources. |
-| `get_paper` | Get full metadata for a research paper by its CORE ID. Returns title, authors, abstract, full text link, DOI, publisher, year, and citation count. |
+- `search_papers(query, limit?)` — matching works: title, authors, abstract,
+  DOI, year, download URL, publisher.
+- `get_paper(id)` — one work by CORE id, with language, citation count and
+  reference count.
+
+## Auth
+
+BYO only: pass your own CORE API key as `_apiKey`. Register at
+<https://core.ac.uk/services/api>. There is no platform key, so the call runs
+under the caller's own CORE licence.
+
+## Licence — zero-rated (fleet #1974)
+
+CORE's Terms & Conditions (<https://core.ac.uk/terms>) §3 "Other datasets and
+the API": the API needs a licence; individuals and public research
+organisations may get a free one provided they *"acknowledge the use of
+CORE"*; and anyone *"developing or intending to develop a product, service or
+software using CORE data which might be monetised now or in the future"* must
+contact CORE. Consequences:
+
+- `zeroRated: true` on the gateway entry: 0 credits on every tier, so the
+  gateway is never the monetised product §3 describes.
+- Every response leads with `attribution`, `license`
+  (`LicenseRef-CORE-Terms-and-Conditions`, `kind: vendor_terms`, obligations
+  `attribution` + `non_commercial`) and `license_note`, via `attachLicense`
+  in `@pipeworx/shared`.
+- The caller's own CORE licence governs what they may do with the data.
+
+## Data sources
+
+- <https://api.core.ac.uk/v3/search/works> — search (note the trailing-slash
+  301 if you call it by hand; the pack follows it).
+- <https://api.core.ac.uk/v3/works/{id}> — one work.
 
 ## Quick Start
 
@@ -55,7 +86,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1573+ data sources. The
+Both URLs reach the same gateway and the same 1576+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
