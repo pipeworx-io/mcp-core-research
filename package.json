@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-core-research",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CORE Research MCP — wraps CORE API (api.core.ac.uk/v3)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-7ab4f17cad24e00d2be9f2dc182c1a8b4a6fb4f42108faff2f0cc85de3f2e89a",
-    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
+    "sourceHash": "v1-5b17e711f884fd524ce833e4ff34b8d4dd7f7f57ac9d0f5ca58d35ba9490db03",
+    "sourceCommit": "5b29c2b0c11e1fcd954969a245b474e6e9475116"
   }
 }
