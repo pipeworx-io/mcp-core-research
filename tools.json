@@ -1,0 +1,48 @@
+[
+  {
+    "name": "search_papers",
+    "description": "Search open-access research papers by keyword (e.g., \"machine learning healthcare\"). Returns titles, authors, abstracts, DOIs, and download links. Useful for literature reviews and finding academic sources.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "CORE API key"
+        },
+        "query": {
+          "type": "string",
+          "description": "Search query (e.g., \"climate change mitigation\", \"CRISPR gene editing\")"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max results to return (1-100, default 10)"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_paper",
+    "description": "Get full metadata for a research paper by its CORE ID. Returns title, authors, abstract, full text link, DOI, publisher, year, and citation count.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "CORE API key"
+        },
+        "id": {
+          "type": "string",
+          "description": "CORE paper ID (numeric string)"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "id"
+      ]
+    }
+  }
+]
