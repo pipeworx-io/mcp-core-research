@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-core-research",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CORE Research MCP — wraps CORE API (api.core.ac.uk/v3)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "core-research",
     "gatewaySlug": "core-research",
-    "sourceHash": "v1-3a02b9b1168cf62117e22c31aff30e372f38099353bace40f6e2dfb8b03543a7",
-    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
+    "sourceHash": "v1-4469e7a9e5513baf876f48b2fbb1e7555c48cc7ebc1250045b7a20b6355e789f",
+    "sourceCommit": "8cc978183948532674e797c429305c9d8ab2a1c3"
   }
 }
